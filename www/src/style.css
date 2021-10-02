@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Recursive';
+    /* src: "./FiraCode-Regular.ttf" format('truetype') ; */
+    src: url("./Recursive_VF_1.078.woff2") format('woff2');
+    font-variation-settings: 'wght' 400, 'slnt' 0, 'CASL' 0, 'CRSV' 0, 'MONO' 0, "liga" 1;
+    font-variant-ligatures: normal;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Recursive";
+    text-shadow: 0 0 5px white;
+}
+
+.btn {
+    border: 2px solid white;
+    width: max-content;
+    padding: 5px;
+    user-select: none;
+}
+
+canvas {
+    border: 0px ridge black;
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.btn:hover {
+    background: grey;    
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    #game {
+	width: 900px;
+    }
+}
+
+#scene {
+    padding: 10px
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.roundbtn {
+    
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.squarebtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border: 1px solid grey;
+    font-size: 64px;
+}
+
+.squarebtn:active {
+    background-color: lightgrey;
+}

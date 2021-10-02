@@ -1,0 +1,38 @@
+[package]
+name = "nywer"
+version = "0.1.0"
+authors = ["sagar <c@d.e>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = "0.2.74"
+
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "0.1.6", optional = true }
+
+rand = {version = "0.7", features = ["wasm-bindgen"]}
+rand_distr =  {version = "0.3.0"}
+enum-map = "0.6.2"
+nalgebra-glm = "0.8"
+js-sys = "0.3.9"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.13"
+
+[profile.release]
+opt-level = 3
+
+[package.metadata.wasm-pack.profile.dev]
+ wasm-opt = false
+
